@@ -21,6 +21,7 @@
 		5DB49E65161B0B76005FAA80 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E64161B0B76005FAA80 /* MessageUI.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5DB49E67161B0B7C005FAA80 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E66161B0B7C005FAA80 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5DB49E69161B0B80005FAA80 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E68161B0B80005FAA80 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5DB49E6D161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		5DB49E64161B0B76005FAA80 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5DB49E66161B0B7C005FAA80 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5DB49E68161B0B80005FAA80 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFKitImproveRecursiveDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				5DB49E59161B09FE005FAA80 /* MainStoryboard.storyboard */,
 				5DB49E5C161B09FF005FAA80 /* ViewController.h */,
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
+				5DB49E6A161B130C005FAA80 /* Vendor */,
 				5DB49E48161B09FE005FAA80 /* Supporting Files */,
 			);
 			path = RemoteViewControllers;
@@ -117,6 +120,22 @@
 				5DB49E57161B09FE005FAA80 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DB49E6A161B130C005FAA80 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5DB49E6B161B130C005FAA80 /* PSRecursiveDescription */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5DB49E6B161B130C005FAA80 /* PSRecursiveDescription */ = {
+			isa = PBXGroup;
+			children = (
+				5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */,
+			);
+			path = PSRecursiveDescription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +207,7 @@
 				5DB49E4E161B09FE005FAA80 /* main.m in Sources */,
 				5DB49E52161B09FE005FAA80 /* AppDelegate.m in Sources */,
 				5DB49E5E161B09FF005FAA80 /* ViewController.m in Sources */,
+				5DB49E6D161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@
 
 @end
 
+
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -102,6 +103,8 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
+    // Set a breakpoint here and call po [controller.view recursiveDescription]
+    // in the debugger to check out the view (controller) hierarchy
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -109,6 +112,8 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
+    // Set a breakpoint here and call po [controller.view recursiveDescription]
+    // in the debugger to check out the view (controller) hierarchy
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
