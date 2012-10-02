@@ -7,6 +7,7 @@
 //
 
 #import "LoggerProxy.h"
+#import "NSInvocation+Logging.h"
 
 @implementation LoggerProxy {
     id _forwardingTarget;
@@ -27,6 +28,10 @@
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
     NSLog(@"[%@ %@]", _forwardingTarget, NSStringFromSelector([invocation selector]));
+    NSArray *argumentList = [invocation readableArgumentList];
+    if ([argumentList count] > 0) {
+        NSLog(@"arguments: %@", argumentList);
+    }
     [invocation invokeWithTarget:_forwardingTarget];
 }
 

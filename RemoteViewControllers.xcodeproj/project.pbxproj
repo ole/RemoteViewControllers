@@ -26,6 +26,8 @@
 		5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A21F161B174C007B81D1 /* JRSwizzle.m */; };
 		5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A223161B2209007B81D1 /* CTBlockDescription.m */; };
 		5DE7A229161B2F74007B81D1 /* LoggerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A228161B2F74007B81D1 /* LoggerProxy.m */; };
+		5DE7A22C161B3FB3007B81D1 /* NSInvocation+Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A22B161B3FB3007B81D1 /* NSInvocation+Logging.m */; };
+		5DE7A22F161B407A007B81D1 /* MethodArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A22E161B407A007B81D1 /* MethodArgument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,10 @@
 		5DE7A226161B2338007B81D1 /* _UIAsyncInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UIAsyncInvocation.h; sourceTree = "<group>"; };
 		5DE7A227161B2F74007B81D1 /* LoggerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerProxy.h; sourceTree = "<group>"; };
 		5DE7A228161B2F74007B81D1 /* LoggerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerProxy.m; sourceTree = "<group>"; };
+		5DE7A22A161B3FB2007B81D1 /* NSInvocation+Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Logging.h"; sourceTree = "<group>"; };
+		5DE7A22B161B3FB3007B81D1 /* NSInvocation+Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Logging.m"; sourceTree = "<group>"; };
+		5DE7A22D161B407A007B81D1 /* MethodArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodArgument.h; sourceTree = "<group>"; };
+		5DE7A22E161B407A007B81D1 /* MethodArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodArgument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
 				5DE7A227161B2F74007B81D1 /* LoggerProxy.h */,
 				5DE7A228161B2F74007B81D1 /* LoggerProxy.m */,
+				5DE7A22A161B3FB2007B81D1 /* NSInvocation+Logging.h */,
+				5DE7A22B161B3FB3007B81D1 /* NSInvocation+Logging.m */,
+				5DE7A22D161B407A007B81D1 /* MethodArgument.h */,
+				5DE7A22E161B407A007B81D1 /* MethodArgument.m */,
 				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
 				5DE7A218161B159A007B81D1 /* _UIRemoteViewController */,
 				5DB49E6A161B130C005FAA80 /* Vendor */,
@@ -268,6 +278,8 @@
 				5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */,
 				5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */,
 				5DE7A229161B2F74007B81D1 /* LoggerProxy.m in Sources */,
+				5DE7A22C161B3FB3007B81D1 /* NSInvocation+Logging.m in Sources */,
+				5DE7A22F161B407A007B81D1 /* MethodArgument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
