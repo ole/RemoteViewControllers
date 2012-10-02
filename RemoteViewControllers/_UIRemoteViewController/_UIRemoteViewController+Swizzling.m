@@ -8,6 +8,7 @@
 
 #import "_UIRemoteViewController+Swizzling.h"
 #import "_UIAsyncInvocation.h"
+#import "CTBlockDescription.h"
 
 id (*globalOriginalRequestViewController)(id, SEL, id, id, id);
 
@@ -18,6 +19,10 @@ _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifier
     NSLog(@"arg1: %@ %@", [viewControllerName class], viewControllerName);
     NSLog(@"arg2: %@ %@", [serviceBundleID class], serviceBundleID);
     NSLog(@"arg3: %@ %@", [connectionHandlerBlock class], connectionHandlerBlock);
+    
+    CTBlockDescription *blockDescription = [[CTBlockDescription alloc] initWithBlock:connectionHandlerBlock];
+    NSMethodSignature *blockSignature = blockDescription.blockSignature;
+    NSLog(@"connectionHandlerBlock signature: %@", blockSignature);
     
     // Call the original implementation of the method
     _UIAsyncInvocation *returnValue = globalOriginalRequestViewController(_self, _cmd, viewControllerName, serviceBundleID, connectionHandlerBlock);
