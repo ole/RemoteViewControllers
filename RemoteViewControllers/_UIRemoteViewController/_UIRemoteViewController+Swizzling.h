@@ -8,8 +8,8 @@
 
 #import "_UIRemoteViewController.h"
 
-@interface _UIRemoteViewController (Swizzling)
+// Global function pointer to receive implementation of the method we want to swizzle
+extern id (*globalOriginalRequestViewController)(id, SEL, id, id, id);
 
-+ (id)swizzled_requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id)arg3;
-
-@end
+// New implementation of the swizzled method
+id SwizzledRequestViewControllerFromServiceWithBundleIdentifierConnectionHandler(_UIRemoteViewController *, SEL, id, id, id);

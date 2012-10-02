@@ -7,36 +7,20 @@
 //
 
 #import "_UIRemoteViewController+Swizzling.h"
-#import "JRSwizzle.h"
 
-@implementation _UIRemoteViewController (Swizzling)
+id (*globalOriginalRequestViewController)(id, SEL, id, id, id);
 
-+ (void)load
-{
-    SEL original = @selector(requestViewController:fromServiceWithBundleIdentifier:connectionHandler:);
-    SEL swizzled = @selector(swizzled_requestViewController:fromServiceWithBundleIdentifier:connectionHandler:);
-    
-    NSError *error = nil;
-    BOOL result = [self jr_swizzleClassMethod:original withClassMethod:swizzled error:&error];
-    if (result) {
-        NSLog(@"Successfully swizzled %@", NSStringFromSelector(original));
-    } else {
-        NSLog(@"Error swizzling %@: %@", NSStringFromSelector(original), error);
-    }
-}
-
-+ (id)swizzled_requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id)arg3
+id SwizzledRequestViewControllerFromServiceWithBundleIdentifierConnectionHandler(_UIRemoteViewController *_self, SEL _cmd, id arg1, id arg2, id arg3)
 {
     NSLog(@"%s", __FUNCTION__);
+    NSLog(@"self: %@", _self);
     NSLog(@"arg1: %@ %@", [arg1 class], arg1);
     NSLog(@"arg2: %@ %@", [arg2 class], arg2);
     NSLog(@"arg3: %@ %@", [arg3 class], arg3);
     
     // Call the original implementation of the method
-    id returnValue = [self swizzled_requestViewController:arg1 fromServiceWithBundleIdentifier:arg2 connectionHandler:arg3];
+    id returnValue = globalOriginalRequestViewController(_self, _cmd, arg1, arg2, arg3);
     
     NSLog(@"Return Value: %@ %@", [returnValue class], returnValue);
     return returnValue;
 }
-
-@end

@@ -7,8 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import <objc/runtime.h>
+#import "_UIRemoteViewController+Swizzling.h"
 
 @implementation AppDelegate
+
++ (void)load
+{
+    // Method swizzling
+    // See http://www.mikeash.com/pyblog/friday-qa-2010-01-29-method-replacement-for-fun-and-profit.html
+    // We only do this if the _UIRemoteViewController class is available (iOS 6.0+)
+    Class UIRemoteViewControllerClass = NSClassFromString(@"_UIRemoteViewController");
+    if (UIRemoteViewControllerClass) {
+        SEL originalSelector = @selector(requestViewController:fromServiceWithBundleIdentifier:connectionHandler:);
+        Method originalMethod = class_getClassMethod(UIRemoteViewControllerClass, originalSelector);
+        globalOriginalRequestViewController = (void *)method_getImplementation(originalMethod);
+        
+        Class UIRemoteViewControllerMetaClass = objc_getMetaClass("_UIRemoteViewController");
+        if (!class_addMethod(UIRemoteViewControllerMetaClass, originalSelector, (IMP)SwizzledRequestViewControllerFromServiceWithBundleIdentifierConnectionHandler, method_getTypeEncoding(originalMethod))) {
+            method_setImplementation(originalMethod, (IMP)SwizzledRequestViewControllerFromServiceWithBundleIdentifierConnectionHandler);
+        }
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
