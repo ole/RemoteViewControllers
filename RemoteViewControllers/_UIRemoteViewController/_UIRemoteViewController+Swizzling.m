@@ -12,7 +12,7 @@
 
 id (*globalOriginalRequestViewController)(id, SEL, id, id, id);
 
-typedef void (^ConnectionHandler)(id blockArg1, id blockArg2);
+typedef void (^ConnectionHandler)(_UIRemoteViewController *remoteViewController, id blockArg2);
 
 _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifierConnectionHandler(_UIRemoteViewController *_self, SEL _cmd, NSString *viewControllerName, NSString *serviceBundleID, id connectionHandlerBlock)
 {
@@ -61,13 +61,13 @@ _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifier
     
     // Replace the connectionHandlerBlock with our own implementation
     ConnectionHandler originalBlock = [(ConnectionHandler)connectionHandlerBlock copy];
-    ConnectionHandler swizzledBlock = ^(id blockArg1, id blockArg2) {
+    ConnectionHandler swizzledBlock = ^(_UIRemoteViewController *remoteViewController, id blockArg2) {
         NSLog(@"connectionHandlerBlock called");
-        NSLog(@"blockArg1: %@ %@", [blockArg1 class], blockArg1);
+        NSLog(@"blockArg1: %@ %@", [remoteViewController class], remoteViewController);
         NSLog(@"blockArg2: %@ %@", [blockArg2 class], blockArg2);
         
         // Call the original block
-        (originalBlock)(blockArg1, blockArg2);
+        (originalBlock)(remoteViewController, blockArg2);
     };
     
     // Call the original implementation of the method
