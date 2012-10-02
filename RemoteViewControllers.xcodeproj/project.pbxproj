@@ -25,6 +25,7 @@
 		5DE7A21C161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A21B161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m */; };
 		5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A21F161B174C007B81D1 /* JRSwizzle.m */; };
 		5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A223161B2209007B81D1 /* CTBlockDescription.m */; };
+		5DE7A229161B2F74007B81D1 /* LoggerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A228161B2F74007B81D1 /* LoggerProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		5DE7A222161B2209007B81D1 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
 		5DE7A223161B2209007B81D1 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
 		5DE7A226161B2338007B81D1 /* _UIAsyncInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UIAsyncInvocation.h; sourceTree = "<group>"; };
+		5DE7A227161B2F74007B81D1 /* LoggerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerProxy.h; sourceTree = "<group>"; };
+		5DE7A228161B2F74007B81D1 /* LoggerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				5DB49E59161B09FE005FAA80 /* MainStoryboard.storyboard */,
 				5DB49E5C161B09FF005FAA80 /* ViewController.h */,
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
+				5DE7A227161B2F74007B81D1 /* LoggerProxy.h */,
+				5DE7A228161B2F74007B81D1 /* LoggerProxy.m */,
 				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
 				5DE7A218161B159A007B81D1 /* _UIRemoteViewController */,
 				5DB49E6A161B130C005FAA80 /* Vendor */,
@@ -262,6 +267,7 @@
 				5DE7A21C161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m in Sources */,
 				5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */,
 				5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */,
+				5DE7A229161B2F74007B81D1 /* LoggerProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

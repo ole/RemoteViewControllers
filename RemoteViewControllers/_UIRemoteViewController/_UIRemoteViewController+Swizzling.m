@@ -9,6 +9,7 @@
 #import "_UIRemoteViewController+Swizzling.h"
 #import "_UIAsyncInvocation.h"
 #import "CTBlockDescription.h"
+#import "LoggerProxy.h"
 
 id (*globalOriginalRequestViewController)(id, SEL, id, id, id);
 
@@ -66,8 +67,10 @@ _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifier
         NSLog(@"blockArg1: %@ %@", [remoteViewController class], remoteViewController);
         NSLog(@"blockArg2: %@ %@", [blockArg2 class], blockArg2);
         
+        LoggerProxy *loggerProxy = [[LoggerProxy alloc] initWithForwardingTarget:remoteViewController];
+        
         // Call the original block
-        (originalBlock)(remoteViewController, blockArg2);
+        (originalBlock)((_UIRemoteViewController *)loggerProxy, blockArg2);
     };
     
     // Call the original implementation of the method
