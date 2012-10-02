@@ -24,6 +24,7 @@
 		5DB49E6D161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */; };
 		5DE7A21C161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A21B161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m */; };
 		5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A21F161B174C007B81D1 /* JRSwizzle.m */; };
+		5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7A223161B2209007B81D1 /* CTBlockDescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		5DE7A21B161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "_UIRemoteViewController+Swizzling.m"; sourceTree = "<group>"; };
 		5DE7A21E161B174C007B81D1 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		5DE7A21F161B174C007B81D1 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		5DE7A222161B2209007B81D1 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
+		5DE7A223161B2209007B81D1 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 		5DB49E6A161B130C005FAA80 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				5DE7A221161B2209007B81D1 /* CTObjectiveCRuntimeAdditions */,
 				5DE7A21D161B174C007B81D1 /* JRSwizzle */,
 				5DB49E6B161B130C005FAA80 /* PSRecursiveDescription */,
 			);
@@ -164,6 +168,15 @@
 				5DE7A21F161B174C007B81D1 /* JRSwizzle.m */,
 			);
 			path = JRSwizzle;
+			sourceTree = "<group>";
+		};
+		5DE7A221161B2209007B81D1 /* CTObjectiveCRuntimeAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				5DE7A222161B2209007B81D1 /* CTBlockDescription.h */,
+				5DE7A223161B2209007B81D1 /* CTBlockDescription.m */,
+			);
+			path = CTObjectiveCRuntimeAdditions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +251,7 @@
 				5DB49E6D161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m in Sources */,
 				5DE7A21C161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m in Sources */,
 				5DE7A220161B174C007B81D1 /* JRSwizzle.m in Sources */,
+				5DE7A224161B2209007B81D1 /* CTBlockDescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
