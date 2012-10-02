@@ -55,6 +55,7 @@
 		5DE7A21F161B174C007B81D1 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		5DE7A222161B2209007B81D1 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
 		5DE7A223161B2209007B81D1 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
+		5DE7A226161B2338007B81D1 /* _UIAsyncInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UIAsyncInvocation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 				5DB49E59161B09FE005FAA80 /* MainStoryboard.storyboard */,
 				5DB49E5C161B09FF005FAA80 /* ViewController.h */,
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
+				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
 				5DE7A218161B159A007B81D1 /* _UIRemoteViewController */,
 				5DB49E6A161B130C005FAA80 /* Vendor */,
 				5DB49E48161B09FE005FAA80 /* Supporting Files */,
@@ -177,6 +179,14 @@
 				5DE7A223161B2209007B81D1 /* CTBlockDescription.m */,
 			);
 			path = CTObjectiveCRuntimeAdditions;
+			sourceTree = "<group>";
+		};
+		5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */ = {
+			isa = PBXGroup;
+			children = (
+				5DE7A226161B2338007B81D1 /* _UIAsyncInvocation.h */,
+			);
+			path = _UIAsyncInvocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
