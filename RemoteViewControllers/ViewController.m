@@ -8,6 +8,11 @@
 
 #import "ViewController.h"
 
+@interface UIView (RecursiveDescription)
+// Declare the private recursiveDescription method here to silence compiler errors
+- (NSString *)recursiveDescription;
+@end
+
 @interface ViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 - (IBAction)openMailComposer:(id)sender;
@@ -36,7 +41,10 @@
     }
     MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
     [controller setMailComposeDelegate:self];
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:controller animated:YES completion:^{
+        // Log the view hierarchy here to see what's going on
+        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+    }];
 }
 
 - (IBAction)openMessageComposer:(id)sender
@@ -48,7 +56,10 @@
     }
     MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
     [controller setMessageComposeDelegate:self];
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:controller animated:YES completion:^{
+        // Log the view hierarchy here to see what's going on
+        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+    }];
 }
 
 - (IBAction)openTweetComposer:(id)sender
@@ -66,7 +77,10 @@
         twitterController.completionHandler = ^(TWTweetComposeViewControllerResult result) {
             [self dismissViewControllerAnimated:YES completion:nil];
         };
-        [self presentViewController:twitterController animated:YES completion:nil];
+        [self presentViewController:twitterController animated:YES completion:^{
+            // Log the view hierarchy here to see what's going on
+            NSLog(@"View hierarchy: %@", [twitterController.view recursiveDescription]);
+        }];
     }
     else
     {
@@ -80,7 +94,10 @@
         sharingController.completionHandler = ^(SLComposeViewControllerResult result) {
             [self dismissViewControllerAnimated:YES completion:nil];
         };
-        [self presentViewController:sharingController animated:YES completion:nil];
+        [self presentViewController:sharingController animated:YES completion:^{
+            // Log the view hierarchy here to see what's going on
+            NSLog(@"View hierarchy: %@", [sharingController.view recursiveDescription]);
+        }];
     }
 }
 
@@ -96,15 +113,16 @@
     controller.completionHandler = ^(SLComposeViewControllerResult result) {
         [self dismissViewControllerAnimated:YES completion:nil];
     };
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:controller animated:YES completion:^{
+        // Log the view hierarchy here to see what's going on
+        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+    }];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    // Set a breakpoint here and call po [controller.view recursiveDescription]
-    // in the debugger to check out the view (controller) hierarchy
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -112,8 +130,6 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-    // Set a breakpoint here and call po [controller.view recursiveDescription]
-    // in the debugger to check out the view (controller) hierarchy
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
