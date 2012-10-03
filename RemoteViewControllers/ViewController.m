@@ -43,7 +43,7 @@
     [controller setMailComposeDelegate:self];
     [self presentViewController:controller animated:YES completion:^{
         // Log the view hierarchy here to see what's going on
-        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+        //NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
     }];
 }
 
@@ -58,7 +58,7 @@
     [controller setMessageComposeDelegate:self];
     [self presentViewController:controller animated:YES completion:^{
         // Log the view hierarchy here to see what's going on
-        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+        //NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
     }];
 }
 
@@ -79,7 +79,7 @@
         };
         [self presentViewController:twitterController animated:YES completion:^{
             // Log the view hierarchy here to see what's going on
-            NSLog(@"View hierarchy: %@", [twitterController.view recursiveDescription]);
+            //NSLog(@"View hierarchy: %@", [twitterController.view recursiveDescription]);
         }];
     }
     else
@@ -96,7 +96,7 @@
         };
         [self presentViewController:sharingController animated:YES completion:^{
             // Log the view hierarchy here to see what's going on
-            NSLog(@"View hierarchy: %@", [sharingController.view recursiveDescription]);
+            //NSLog(@"View hierarchy: %@", [sharingController.view recursiveDescription]);
         }];
     }
 }
@@ -115,7 +115,7 @@
     };
     [self presentViewController:controller animated:YES completion:^{
         // Log the view hierarchy here to see what's going on
-        NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+        //NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
     }];
 }
 
