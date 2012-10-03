@@ -84,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DB21E45161C9DE60077A491 /* NSInvocation+Logging */ = {
+			isa = PBXGroup;
+			children = (
+				5DE7A22A161B3FB2007B81D1 /* NSInvocation+Logging.h */,
+				5DE7A22B161B3FB3007B81D1 /* NSInvocation+Logging.m */,
+				5DE7A22D161B407A007B81D1 /* MethodArgument.h */,
+				5DE7A22E161B407A007B81D1 /* MethodArgument.m */,
+			);
+			name = "NSInvocation+Logging";
+			sourceTree = "<group>";
+		};
+		5DB21E47161C9E000077A491 /* LoggerProxy */ = {
+			isa = PBXGroup;
+			children = (
+				5DE7A227161B2F74007B81D1 /* LoggerProxy.h */,
+				5DE7A228161B2F74007B81D1 /* LoggerProxy.m */,
+			);
+			name = LoggerProxy;
+			sourceTree = "<group>";
+		};
 		5DB49E32161B09FE005FAA80 = {
 			isa = PBXGroup;
 			children = (
@@ -122,12 +142,8 @@
 				5DB49E59161B09FE005FAA80 /* MainStoryboard.storyboard */,
 				5DB49E5C161B09FF005FAA80 /* ViewController.h */,
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
-				5DE7A227161B2F74007B81D1 /* LoggerProxy.h */,
-				5DE7A228161B2F74007B81D1 /* LoggerProxy.m */,
-				5DE7A22A161B3FB2007B81D1 /* NSInvocation+Logging.h */,
-				5DE7A22B161B3FB3007B81D1 /* NSInvocation+Logging.m */,
-				5DE7A22D161B407A007B81D1 /* MethodArgument.h */,
-				5DE7A22E161B407A007B81D1 /* MethodArgument.m */,
+				5DB21E47161C9E000077A491 /* LoggerProxy */,
+				5DB21E45161C9DE60077A491 /* NSInvocation+Logging */,
 				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
 				5DE7A218161B159A007B81D1 /* _UIRemoteViewController */,
 				5DB49E6A161B130C005FAA80 /* Vendor */,
