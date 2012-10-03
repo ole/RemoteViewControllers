@@ -13,12 +13,13 @@
 - (NSString *)recursiveDescription;
 @end
 
-@interface ViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
+@interface ViewController () <MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate, QLPreviewControllerDataSource>
 
 - (IBAction)openMailComposer:(id)sender;
 - (IBAction)openMessageComposer:(id)sender;
 - (IBAction)openTweetComposer:(id)sender;
 - (IBAction)openFacebookSharing:(id)sender;
+- (IBAction)openQuickLook:(id)sender;
 
 @end
 
@@ -119,6 +120,16 @@
     }];
 }
 
+- (IBAction)openQuickLook:(id)sender
+{
+    QLPreviewController *controller = [[QLPreviewController alloc] init];
+    controller.dataSource = self;
+    [self presentViewController:controller animated:YES completion:^{
+        // Log the view hierarchy here to see what's going on
+        //NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+    }];
+}
+
 #pragma mark - MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -131,6 +142,18 @@
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - QLPreviewControllerDataSource
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller
+{
+    return 1;
+}
+
+- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index
+{
+    return [[NSBundle mainBundle] URLForResource:@"iphone-5-vertical" withExtension:@"png"];
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DB21E49161CA2FB0077A491 /* iphone-5-vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB21E48161CA2FB0077A491 /* iphone-5-vertical.png */; };
+		5DB21E4B161CA41B0077A491 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB21E4A161CA41B0077A491 /* QuickLook.framework */; };
 		5DB49E42161B09FE005FAA80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E41161B09FE005FAA80 /* UIKit.framework */; };
 		5DB49E44161B09FE005FAA80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E43161B09FE005FAA80 /* Foundation.framework */; };
 		5DB49E46161B09FE005FAA80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB49E45161B09FE005FAA80 /* CoreGraphics.framework */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DB21E48161CA2FB0077A491 /* iphone-5-vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-5-vertical.png"; sourceTree = "<group>"; };
+		5DB21E4A161CA41B0077A491 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		5DB49E3D161B09FE005FAA80 /* RemoteViewControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteViewControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB49E41161B09FE005FAA80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5DB49E43161B09FE005FAA80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +82,7 @@
 				5DB49E69161B0B80005FAA80 /* Social.framework in Frameworks */,
 				5DB49E67161B0B7C005FAA80 /* Twitter.framework in Frameworks */,
 				5DB49E65161B0B76005FAA80 /* MessageUI.framework in Frameworks */,
+				5DB21E4B161CA41B0077A491 /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +129,7 @@
 		5DB49E40161B09FE005FAA80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DB21E4A161CA41B0077A491 /* QuickLook.framework */,
 				5DB49E68161B0B80005FAA80 /* Social.framework */,
 				5DB49E66161B0B7C005FAA80 /* Twitter.framework */,
 				5DB49E64161B0B76005FAA80 /* MessageUI.framework */,
@@ -142,6 +148,7 @@
 				5DB49E59161B09FE005FAA80 /* MainStoryboard.storyboard */,
 				5DB49E5C161B09FF005FAA80 /* ViewController.h */,
 				5DB49E5D161B09FF005FAA80 /* ViewController.m */,
+				5DB21E48161CA2FB0077A491 /* iphone-5-vertical.png */,
 				5DB21E47161C9E000077A491 /* LoggerProxy */,
 				5DB21E45161C9DE60077A491 /* NSInvocation+Logging */,
 				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
@@ -276,6 +283,7 @@
 				5DB49E56161B09FE005FAA80 /* Default@2x.png in Resources */,
 				5DB49E58161B09FE005FAA80 /* Default-568h@2x.png in Resources */,
 				5DB49E5B161B09FF005FAA80 /* MainStoryboard.storyboard in Resources */,
+				5DB21E49161CA2FB0077A491 /* iphone-5-vertical.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
