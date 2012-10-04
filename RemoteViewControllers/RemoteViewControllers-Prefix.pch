@@ -15,4 +15,5 @@
     #import <Twitter/Twitter.h>
     #import <Social/Social.h>
     #import <QuickLook/QuickLook.h>
+    #import <StoreKit/StoreKit.h>
 #endif
