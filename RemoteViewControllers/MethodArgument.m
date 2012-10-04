@@ -51,7 +51,7 @@
     } else if (strcmp(_type, @encode(_Bool)) == 0) {
         return sizeof(_Bool);
     } else if (strcmp(_type, @encode(void)) == 0) {
-        return sizeof(void);
+        return 0;
     } else if (strcmp(_type, @encode(char *)) == 0) {
         return sizeof(char *);
     } else if (strcmp(_type, @encode(id)) == 0 || strcmp(_type, "@?") == 0) { // object or block (@?)
@@ -69,10 +69,15 @@
 
 - (NSMutableData *)bufferForContents
 {
-    if (_contents == nil) {
-        _contents = [[NSMutableData alloc] initWithLength:self.size];
+    if (self.size == 0) {
+        _contents = nil;
+        return nil;
+    } else {
+        if (_contents == nil) {
+            _contents = [[NSMutableData alloc] initWithLength:self.size];
+        }
+        return _contents;
     }
-    return _contents;
 }
 
 - (NSString *)description

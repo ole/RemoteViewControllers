@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MethodArgument.h"
 
 @interface NSInvocation (Logging)
 
 - (NSArray *)readableArgumentList;
+- (MethodArgument *)informationOnReturnValue;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "NSInvocation+Logging.h"
-#import "MethodArgument.h"
 
 @implementation NSInvocation (Logging)
 
@@ -26,6 +25,18 @@
         [arguments addObject:argument];
     }
     return arguments;
+}
+
+- (MethodArgument *)informationOnReturnValue
+{
+    NSMethodSignature *signature = [self methodSignature];
+    const char *returnType = [signature methodReturnType];
+    MethodArgument *returnValue = [[MethodArgument alloc] initWithArgumentType:returnType];
+    NSMutableData *buffer = [returnValue bufferForContents];
+    if (buffer) {
+        [self getReturnValue:[buffer mutableBytes]];
+    }
+    return returnValue;
 }
 
 @end

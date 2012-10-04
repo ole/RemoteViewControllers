@@ -27,12 +27,13 @@
 
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
-    NSLog(@"[%@ %@]", _forwardingTarget, NSStringFromSelector([invocation selector]));
+    NSLog(@"Logger Proxy: [%@ %@]", _forwardingTarget, NSStringFromSelector([invocation selector]));
     NSArray *argumentList = [invocation readableArgumentList];
     if ([argumentList count] > 0) {
-        NSLog(@"arguments: %@", argumentList);
+        NSLog(@"  called with arguments: %@", argumentList);
     }
     [invocation invokeWithTarget:_forwardingTarget];
+    NSLog(@"  return value: %@", [invocation informationOnReturnValue]);
 }
 
 @end
