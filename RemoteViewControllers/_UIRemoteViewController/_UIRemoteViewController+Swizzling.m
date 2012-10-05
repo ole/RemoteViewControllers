@@ -70,7 +70,7 @@ _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifier
         LoggerProxy *loggerProxy = [[LoggerProxy alloc] initWithForwardingTarget:remoteViewController];
         
         // Call the original block
-        (originalBlock)((_UIRemoteViewController *)loggerProxy, blockArg2);
+        originalBlock((_UIRemoteViewController *)loggerProxy, blockArg2);
     };
     
     // Call the original implementation of the method
