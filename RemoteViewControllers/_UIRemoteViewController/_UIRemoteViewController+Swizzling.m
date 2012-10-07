@@ -67,10 +67,15 @@ _UIAsyncInvocation *SwizzledRequestViewControllerFromServiceWithBundleIdentifier
         NSLog(@"blockArg1: %@ %@", [remoteViewController class], remoteViewController);
         NSLog(@"blockArg2: %@ %@", [blockArg2 class], blockArg2);
         
-        LoggerProxy *loggerProxy = [[LoggerProxy alloc] initWithForwardingTarget:remoteViewController];
+        if (remoteViewController) {
+            // Call the original block with a proxy object to log messages that get sent
+            LoggerProxy *loggerProxy = [[LoggerProxy alloc] initWithForwardingTarget:remoteViewController];
+            originalBlock((_UIRemoteViewController *)loggerProxy, blockArg2);
+        } else {
+            // Call the original block
+            originalBlock(remoteViewController, blockArg2);
+        }
         
-        // Call the original block
-        originalBlock((_UIRemoteViewController *)loggerProxy, blockArg2);
     };
     
     // Call the original implementation of the method
