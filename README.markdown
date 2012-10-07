@@ -6,7 +6,7 @@ This is a test app for investigating the new private and undocumented feature of
 
 ## Overview
 
-![test-app-screenshot.png]
+<img src="https://raw.github.com/ole/RemoteViewControllers/master/test-app-screenshot.png">
 
 The main screen consists of several buttons. Tapping one of them creates one of several of iOS's built-in view controllers and presents it on screen. Examples include the mail or SMS compose view and Twitter/Facebook sharing.
 
