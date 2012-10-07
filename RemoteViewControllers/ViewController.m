@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "_UIWebViewController.h"
+#import "_UIRemoteWebViewController.h"
 
 @interface UIView (RecursiveDescription)
 // Declare the private recursiveDescription method here to silence compiler errors
@@ -21,6 +23,7 @@
 - (IBAction)openFacebookSharing:(id)sender;
 - (IBAction)openQuickLook:(id)sender;
 - (IBAction)openAppStore:(id)sender;
+- (IBAction)openWebView:(id)sender;
 
 @end
 
@@ -144,6 +147,21 @@
     }];
 }
 
+- (IBAction)openWebView:(id)sender
+{
+    _UIWebViewController *controller = [[_UIWebViewController alloc] init];
+    controller.delegate = self;
+
+    NSURL *url = [NSURL URLWithString:@"http://google.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [controller loadRequest:request];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        // Log the view hierarchy here to see what's going on
+        //NSLog(@"View hierarchy: %@", [controller.view recursiveDescription]);
+    }];
+}
+
 #pragma mark - MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -175,6 +193,23 @@
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - _UIWebViewControllerDelegate
+
+- (BOOL)respondsToSelector:(SEL)selector
+{
+    NSLog(@"respondsToSelector: %@", NSStringFromSelector(selector));
+    if (selector == @selector(_webViewController:shouldStartLoadWithRequest:inMainFrame:navigationType:)) {
+        return YES;
+    }
+    return [super respondsToSelector:selector];
+}
+
+- (BOOL)_webViewController:(_UIWebViewController *)controller shouldStartLoadWithRequest:(NSURLRequest *)request inMainFrame:(BOOL)inMainFrame navigationType:(UIWebViewNavigationType)navigationType
+{
+    NSLog(@"%s %@", __FUNCTION__, request);
+    return YES;
 }
 
 @end

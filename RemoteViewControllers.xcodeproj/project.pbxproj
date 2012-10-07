@@ -57,6 +57,8 @@
 		5DB49E66161B0B7C005FAA80 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		5DB49E68161B0B80005FAA80 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFKitImproveRecursiveDescription.m; sourceTree = "<group>"; };
+		5DD2DF4D1621C4A200FE9198 /* _UIRemoteWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UIRemoteWebViewController.h; sourceTree = "<group>"; };
+		5DD2DF4F1621C4EA00FE9198 /* _UIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _UIWebViewController.h; sourceTree = "<group>"; };
 		5DE7A219161B159A007B81D1 /* _UIRemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UIRemoteViewController.h; sourceTree = "<group>"; };
 		5DE7A21A161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_UIRemoteViewController+Swizzling.h"; sourceTree = "<group>"; };
 		5DE7A21B161B15B0007B81D1 /* _UIRemoteViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "_UIRemoteViewController+Swizzling.m"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				5DB21E45161C9DE60077A491 /* NSInvocation+Logging */,
 				5DE7A225161B2338007B81D1 /* _UIAsyncInvocation */,
 				5DE7A218161B159A007B81D1 /* _UIRemoteViewController */,
+				5DD2DF4C1621C4A200FE9198 /* _UIRemoteWebViewController */,
 				5DB49E6A161B130C005FAA80 /* Vendor */,
 				5DB49E48161B09FE005FAA80 /* Supporting Files */,
 			);
@@ -193,6 +196,15 @@
 				5DB49E6C161B130C005FAA80 /* PSPDFKitImproveRecursiveDescription.m */,
 			);
 			path = PSRecursiveDescription;
+			sourceTree = "<group>";
+		};
+		5DD2DF4C1621C4A200FE9198 /* _UIRemoteWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DD2DF4F1621C4EA00FE9198 /* _UIWebViewController.h */,
+				5DD2DF4D1621C4A200FE9198 /* _UIRemoteWebViewController.h */,
+			);
+			path = _UIRemoteWebViewController;
 			sourceTree = "<group>";
 		};
 		5DE7A218161B159A007B81D1 /* _UIRemoteViewController */ = {
